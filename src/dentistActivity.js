@@ -38,7 +38,7 @@ import {connect} from 'react-redux';
 
 
         return (
-            <Container style={{backgroundColor: them.background,paddingTop:18}}>
+            <Container style={{backgroundColor: them.background}}>
                 <Grid style={{justifyContent: 'center'}}>
                     <Row size={0.8} style={{justifyContent: 'center', alignItems: 'center'}}>
                         <BorderedText colorstyle={them.pink} additionalTextStyle={{fontSize: 30, fontWeight: 'bold'}} >فلورا عند طبيب الاسنان</BorderedText>

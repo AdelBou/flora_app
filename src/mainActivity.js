@@ -68,11 +68,9 @@ class MainActivity extends Component {
             seconds = parseInt(timer % 60, 10);
             minutes = minutes < 10 ? "0" + minutes : minutes;
             seconds = seconds < 10 ? "0" + seconds : seconds;
-
             this.props.setHoure(9 - Math.round(minutes * 60 + seconds / time));
 
             if (--timer < 0) {
-
                 this.props.setSleep(false);
                 this.props.setHoure(0);
                 this.props.setProgress(100);
@@ -124,7 +122,7 @@ class MainActivity extends Component {
 
     render() {
         return (
-            <Container style={{backgroundColor: them.background,paddingTop:18}}>
+            <Container style={{backgroundColor: them.background}}>
                 <Grid style={{justifyContent: 'center'}}>
                     <Row size={0.8}>
                         <View style={styles.exitaboutlayout}>

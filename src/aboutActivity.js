@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import {View, Image, Text} from 'react-native';
-import {Container, Header, Content, Badge, Icon, Button} from 'native-base';
+import {Container, Header, Content, Badge, Icon, Button, Thumbnail} from 'native-base';
 import Flora from './components/flora';
 import {Col, Row, Grid} from 'react-native-easy-grid';
-import { MyButtonIcon, BorderedText} from "./components/common";
+import {MyButtonIcon, BorderedText} from "./components/common";
 import them from "../static/colors/colors";
-
+import AutoHeightImage from 'react-native-auto-height-image';
 import {Actions} from 'react-native-router-flux';
 
 export default class AboutActivity extends Component {
@@ -15,7 +15,7 @@ export default class AboutActivity extends Component {
 
         return (
 
-            <Container style={{backgroundColor: them.background,paddingTop:18}}>
+            <Container style={{backgroundColor: them.background}}>
                 <Grid style={{justifyContent: 'center'}}>
                     <Row size={1} style={{justifyContent: 'center', alignItems: 'center'}}>
                         <BorderedText colorstyle={them.pink} additionalTextStyle={{fontSize: 30, fontWeight: 'bold'}}>حول
@@ -38,6 +38,7 @@ export default class AboutActivity extends Component {
                             <Text style={styles.textStyle}>دانية المنيع</Text>
                             <Text style={styles.textStyle}>نورة اليابس</Text>
                             <Text style={styles.textStyle}>سارة العايذي</Text>
+                            <Text style={styles.textStyle}>دلال الحربي</Text>
                         </View>
                     </Row>
                     <Row size={1} style={{justifyContent: 'center'}}>
@@ -54,18 +55,29 @@ export default class AboutActivity extends Component {
 
                     </Row>
                     <Row size={1} style={{justifyContent: 'center'}}>
-                        <BorderedText colorstyle={them.blue} additionalTextStyle={{fontSize: 15, fontWeight: 'bold'}}> بدعم
+                        <BorderedText colorstyle={them.blue} additionalTextStyle={{fontSize: 15, fontWeight: 'bold'}}>
+                            بدعم
                             من: </BorderedText>
                     </Row>
-                    <Row size={1}>
-                        <View style={styles.layout}>
-                            <Text style={styles.textStyle}>شركة المراعي</Text>
-                            <Text style={styles.textStyle}>أزرار التقنية لتقنية المعلومات</Text>
+                    <Row size={1} style={[styles.layout,{padding:0}]}>
+                        <View style={[{padding:5,flex: 1,
+                            justifyContent: 'space-between',flexDirection:'row',
+                            alignItems: 'center'}]} >
+
+                            <AutoHeightImage   source={require('../static/about/sa.png')}
+                                        width={100} style={{marginLeft:2,marginRight:2}}    />
+                            <AutoHeightImage   source={require('../static/about/tp.png')}
+                                        width={55} style={{marginLeft:2,marginRight:2}}    />
+                            <AutoHeightImage    source={require('../static/about/gol.png')}
+                                         width={100}  style={{marginLeft:2,marginRight:2}}  />
+
+                            <AutoHeightImage   square source={require('../static/about/almara3i.png')}
+                                 style={{marginLeft:2,marginRight:2}}            width={60} />
                         </View>
                     </Row>
-                    <Row size={1} style={{justifyContent: 'center'}} >
+                    <Row size={1} style={{justifyContent: 'center'}}>
                         <MyButtonIcon colorstyle={them.green} icon={'return'}
-                                      additionalStyle={{height: 60,width:80, marginBottom: 10}} onPress={() => {
+                                      additionalStyle={{height: 60, width: 80, marginBottom: 10}} onPress={() => {
                             Actions.main()
                         }}>عودة</MyButtonIcon>
 

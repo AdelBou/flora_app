@@ -15,7 +15,7 @@ import {connect} from 'react-redux';
  class ChooseWashActivity extends Component {
     render() {
         return (
-                <Container style={{backgroundColor: them.background,paddingTop:18}}>
+                <Container style={{backgroundColor: them.background}}>
                      <View  style={{justifyContent: 'center', alignItems: 'center',margin:10}} >
                             <BorderedText colorstyle={them.pink} additionalTextStyle={{fontSize: 30, fontWeight: 'bold'}} >تنظيف الاسنان</BorderedText>
                      </View>
